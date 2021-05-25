@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresql-operator-dev4devs-com
+  namespace: odo-todo
+  labels:
+    operators.coreos.com/postgresql-operator-dev4devs-com.odo-todo: ''
+
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: postgresql-operator-dev4devs-com
+  source: community-operators
+  sourceNamespace: openshift-marketplace

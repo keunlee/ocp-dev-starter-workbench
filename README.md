@@ -1,5 +1,9 @@
 # Openshift Developer Starter Workbench 
 
+## Pre-requisites
+
+- odo v2.2.0
+
 ## Login and Create a Project
 
 ```bash
