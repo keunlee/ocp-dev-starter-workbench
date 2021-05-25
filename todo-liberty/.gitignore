@@ -1,20 +1,37 @@
-/.apt_generated/
-/.apt_generated_tests/
-/target/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-/.odo/
-.odo\env
-.odo\odo-file-index.json
-.odo/env
-.odo/odo-file-index.json
-
-.vscode/
-
+### STS ###
+.apt_generated
 .classpath
 .factorypath
 .project
-.settings/
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
 .idea
-target
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+.odo/odo-file-index.json
+.odo/env
 devfile.yaml
-.odo
