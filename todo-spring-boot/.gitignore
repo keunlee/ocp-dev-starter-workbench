@@ -34,3 +34,4 @@ build/
 
 .odo/odo-file-index.json
 .odo/env
+devfile.yaml

@@ -65,10 +65,10 @@ rm devfile.yaml
 rm -rf .odo
 ```
 
-# IV. Create Spring Boot Application Component - oc - Source to Image
+## IV. Create Spring Boot Application Component - oc - Source to Image
 
 todo
 
-# V. Create Spring Boot Application Component - oc - Binar to Image
+## V. Create Spring Boot Application Component - oc - Binar to Image
 
 todo
