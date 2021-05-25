@@ -11,7 +11,7 @@ odo login -u <user> -p <password>
 odo project create odo-todo
 ```
 
-## Install Postgress Operator and Create Database Instance
+## Install Postgress Operator 
 
 Add the operator to the project:
 
@@ -40,7 +40,9 @@ EOF
 
 ```
 
-create database instance: 
+## Create Database Instance
+
+### Option 1: Create Database Instance with `oc` CLI
 
 ```bash
 cat <<EOF | oc apply -f -
@@ -68,6 +70,45 @@ spec:
   size: 1
 EOF
 ```
+
+### Option 2: Create Database Instance with `odo`
+
+NOTE: This option will only work on odo projects that meet the following criteria: 
+
+- an odo `devfile.yaml` must present 
+- the build must NOT be an s2i (source to image) build.
+
+1. Store the yaml of the service in a file: 
+
+```bash
+odo service create postgresql-operator.v0.1.1/Database --dry-run > db.yaml
+```
+
+2. Modify and add following values under metadata: section in the db.yaml file:
+
+```yaml
+  name: sampledatabase
+  annotations:
+    service.binding/db_name: 'path={.spec.databaseName}'
+    service.binding/db_password: 'path={.spec.databasePassword}'
+    service.binding/db_user: 'path={.spec.databaseUser}'
+```
+
+3. Change the following values under `spec`: section of the YAML file:
+
+```yaml
+  databaseName: "todo"
+  databasePassword: "postgres"
+  databaseUser: "password"
+```
+
+4. Create the database from the YAML file: 
+
+```bash
+odo service create --from-file db.yaml
+```
+
+## Create Database Schema
 
 create database
 
