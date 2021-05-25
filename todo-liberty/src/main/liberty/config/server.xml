@@ -1,0 +1,38 @@
+<server description="todo-app">
+
+    <featureManager>
+        <feature>cdi-2.0 </feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>mpHealth-2.2</feature>
+        <feature>mpConfig-1.4</feature>
+        <feature>jdbc-4.3</feature>
+        <feature>mpOpenAPI-1.1</feature>
+        <feature>jpa-2.2</feature>
+    </featureManager>
+
+    <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+    <mpMetrics authentication="false"/>
+
+    <!--Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+
+    <library id="jdbcLib">
+        <file name="${server.config.dir}/postgresql-42.2.20.jar" />
+        <file name="${server.config.dir}/apps/expanded/todo.war/WEB-INF/lib/postgresql-42.2.20.jar" />
+    </library>
+
+    <dataSource jndiName="jdbc/todo">
+        <jdbcDriver libraryRef="jdbcLib"/>
+        <properties.postgresql serverName="${env.POSTGRES_HOST}" portNumber="5432"
+                    databaseName="${env.POSTGRES_DATABASE}"
+                    user="${env.POSTGRES_USER}" password="${env.POSTGRES_PASSWORD}"/>
+    </dataSource>
+
+<!--    <webApplication location="${server.config.dir}/dropins/todo.war" contextRoot="/"/>-->
+    <webApplication location="${server.config.dir}/${env.DROPINS_DIR_VALUE}todo.war" contextRoot="/"/>
+
+    <applicationMonitor dropinsEnabled="false"/>
+
+</server>
