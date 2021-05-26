@@ -11,7 +11,9 @@ odo login -u <user> -p <password>
 odo project create odo-todo
 ```
 
-## III. Install Postgress Operator 
+## III. Install Operators 
+
+### Postgress Operator 
 
 Add the operator to the project:
 
@@ -38,6 +40,32 @@ spec:
   sourceNamespace: openshift-marketplace
 EOF
 
+```
+
+### Service Binding Operator
+
+Add the operator to the project: 
+
+Service Binding Operator
+0.7.1 provided by Red Hat
+
+install operator
+
+```bash
+cat <<EOF | oc apply -f -
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: rh-service-binding-operator
+  namespace: openshift-operators
+  labels:
+    operators.coreos.com/rh-service-binding-operator.openshift-operators: ''
+spec:
+  channel: preview
+  installPlanApproval: Automatic
+  name: rh-service-binding-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
 ```
 
 ## IV. Create Database Instance
