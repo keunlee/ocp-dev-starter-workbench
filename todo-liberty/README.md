@@ -16,7 +16,7 @@ odo config set --env DATABASE_DB_NAME=todo
 odo config set --env DATABASE_DB_USER=postgres
 odo config set --env DATABASE_DB_PASSWORD=password
 
-odo push -f --show-log
+odo push --show-log
 ```
 
 2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
