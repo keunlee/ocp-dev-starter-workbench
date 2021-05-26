@@ -35,6 +35,14 @@ rm -rf .odo
 
 ## II. Create Spring Boot Application Component - odo - Source to Image
 
+skip 1 and 2 if database and schema are setup already
+
+1. Create database instance from ["Option 1"]() in ["IV. Create Database Instance"]()
+
+2. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
+
+3. Create application: 
+
 ```bash
 odo create java todo-springboot-odo-s2i --s2i --context ./
 
@@ -46,6 +54,8 @@ odo config set --env DATABASE_DB_PASSWORD=password
 odo push --show-log
 ```
 
+clean up
+
 ```bash
 odo delete todo-springboot-odo-s2i
 rm devfile.yaml
@@ -54,9 +64,17 @@ rm -rf .odo
 
 ## III. Create Spring Boot Application Component - odo - Binary to Image
 
+skip 1 and 2 if database and schema are setup already
+
+1. Create database instance from ["Option 1"]() in ["IV. Create Database Instance"]()
+
+2. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
+
+3. Create application: 
+
 ```bash
 mvn clean compile package -DskipTests
-s
+
 odo create java todo-springboot-odo-b2i --s2i --binary target/todo-0.0.1-SNAPSHOT.jar 
 
 odo url create --port 8080
