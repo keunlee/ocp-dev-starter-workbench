@@ -1,17 +1,17 @@
 # Openshift Developer Starter Workbench 
 
-## Pre-requisites
+## I. Pre-requisites
 
 - odo v2.2.0
 
-## Login and Create a Project
+## II. Login and Create a Project
 
 ```bash
 odo login -u <user> -p <password>
 odo project create odo-todo
 ```
 
-## Install Postgress Operator 
+## III. Install Postgress Operator 
 
 Add the operator to the project:
 
@@ -40,7 +40,7 @@ EOF
 
 ```
 
-## Create Database Instance
+## IV. Create Database Instance
 
 ### Option 1: Create Database Instance with `oc` CLI
 
@@ -108,7 +108,7 @@ odo service create postgresql-operator.v0.1.1/Database --dry-run > db.yaml
 odo service create --from-file db.yaml
 ```
 
-## Create Database Schema
+## V. Create Database Schema
 
 create database
 
