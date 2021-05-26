@@ -9,9 +9,9 @@ odo create java-springboot todo-springboot-odo-devfile --context ./
 odo push -f
 ```
 
-2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of the ["IV. Create Database Instance"]()
+2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of the ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
 
-3. Create the database schema by following ["V. Create Database Schema"]()
+3. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
 
 4. link the service to the database created in the previous step
 
