@@ -22,6 +22,8 @@ odo link Database/database
 odo push -f --show-log
 ```
 
+access the app url with context: `http://exposed-route/`
+
 clean up
 
 ```bash
@@ -53,6 +55,7 @@ odo config set --env DATABASE_DB_PASSWORD=password
 
 odo push --show-log
 ```
+access the app url with context: `http://exposed-route/`
 
 clean up
 
@@ -86,6 +89,9 @@ odo config set --env DATABASE_DB_PASSWORD=password
 
 odo push --show-log
 ```
+
+access the app url with context: `http://exposed-route/`
+
 
 clean up
 

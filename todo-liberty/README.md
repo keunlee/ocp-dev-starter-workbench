@@ -22,6 +22,8 @@ odo link Database/database
 odo push -f --show-log
 ```
 
+access the app url with context: `http://exposed-route/todo`
+
 clean up
 
 ```bash
@@ -69,6 +71,8 @@ oc logs -f buildconfig/todo-lbrty-s2i
 oc expose service todo-lbrty-s2i
 ```
 
+access the app url with context: `http://exposed-route/`
+
 to clean up: 
 
 ```bash
@@ -101,6 +105,8 @@ oc start-build was-liberty-s2i --from-dir .
 oc logs -f buildconfig/was-liberty-s2i
 oc expose service was-liberty-s2i
 ```
+
+access the app url with context: `http://exposed-route/`
 
 to clean up: 
 
