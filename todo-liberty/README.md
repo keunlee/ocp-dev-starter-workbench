@@ -8,6 +8,17 @@
 odo create java-openliberty todo-lbrty-odo-devfile --context ./
 ```
 
+NOTE: if you are doing "Option 1" of the database setup then also set the odo environment vars and then skip steps 2 through 4
+
+```bash
+odo config set --env DATABASE_SERVICE_HOST=database
+odo config set --env DATABASE_DB_NAME=todo
+odo config set --env DATABASE_DB_USER=postgres
+odo config set --env DATABASE_DB_PASSWORD=password
+
+odo push -f --show-log
+```
+
 2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
 
 3. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
