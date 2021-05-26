@@ -6,23 +6,28 @@
 
 ```bash
 odo create java-springboot todo-springboot-odo-devfile --context ./
-odo push -f
 ```
 
-2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of the ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
+2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
 
 3. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
 
-4. link the service to the database created in the previous step
+4. link the application to the database created in the previous step
 
 ```bash
+odo service list
+
 odo link Database/database 
-odo push -f
+
+odo push -f --show-log
 ```
 
 clean up
 
 ```bash
+odo unlink Database/database
+odo push
+odo service delete Database/database
 odo delete todo-springboot-devfile
 rm devfile.yaml
 rm -rf .odo
@@ -33,10 +38,10 @@ rm -rf .odo
 ```bash
 odo create java todo-springboot-odo-s2i --s2i --context ./
 
-odo config set --env POSTGRES_HOST=database
-odo config set --env POSTGRES_DATABASE=todo
-odo config set --env POSTGRES_USER=postgres
-odo config set --env POSTGRES_PASSWORD=password
+odo config set --env DATABASE_SERVICE_HOST=database
+odo config set --env DATABASE_DB_NAME=todo
+odo config set --env DATABASE_DB_USER=postgres
+odo config set --env DATABASE_DB_PASSWORD=password
 
 odo push --show-log
 ```
@@ -56,10 +61,10 @@ odo create java todo-springboot-odo-b2i --s2i --binary target/todo-0.0.1-SNAPSHO
 
 odo url create --port 8080
 
-odo config set --env POSTGRES_HOST=database
-odo config set --env POSTGRES_DATABASE=todo
-odo config set --env POSTGRES_USER=postgres
-odo config set --env POSTGRES_PASSWORD=password
+odo config set --env DATABASE_SERVICE_HOST=database
+odo config set --env DATABASE_DB_NAME=todo
+odo config set --env DATABASE_DB_USER=postgres
+odo config set --env DATABASE_DB_PASSWORD=password
 
 odo push --show-log
 ```

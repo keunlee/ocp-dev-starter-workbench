@@ -106,11 +106,12 @@ odo service create postgresql-operator.v0.1.1/Database --dry-run > db.yaml
 
 ```bash
 odo service create --from-file db.yaml
+odo push --show-log
 ```
 
 ## V. Create Database Schema
 
-create database
+Wait until the database pod is running, before moving on. (i.e. `watch oc get po`)
 
 ```bash
 # list pods and look for the database pod

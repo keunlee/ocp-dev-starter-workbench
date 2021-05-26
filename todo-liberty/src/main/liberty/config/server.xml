@@ -25,9 +25,9 @@
 
     <dataSource jndiName="jdbc/todo">
         <jdbcDriver libraryRef="jdbcLib"/>
-        <properties.postgresql serverName="${env.POSTGRES_HOST}" portNumber="5432"
-                    databaseName="${env.POSTGRES_DATABASE}"
-                    user="${env.POSTGRES_USER}" password="${env.POSTGRES_PASSWORD}"/>
+        <properties.postgresql serverName="${env.DATABASE_SERVICE_HOST}" portNumber="5432"
+                    databaseName="${env.DATABASE_DB_NAME}"
+                    user="${env.DATABASE_DB_USER}" password="${env.DATABASE_DB_PASSWORD}"/>
     </dataSource>
 
 <!--    <webApplication location="${server.config.dir}/dropins/todo.war" contextRoot="/"/>-->
