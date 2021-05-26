@@ -35,9 +35,9 @@ rm -rf .odo
 
 ## II. Create Spring Boot Application Component - odo - Source to Image
 
-skip 1 and 2 if database and schema are setup already
+**skip 1 and 2 if database and schema are setup already**
 
-1. Create database instance from ["Option 1"]() in ["IV. Create Database Instance"]()
+1. Create database instance from ["Option 1"](../README.md#option-1-create-database-instance-with-oc-cli) in ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
 
 2. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
 
@@ -64,9 +64,9 @@ rm -rf .odo
 
 ## III. Create Spring Boot Application Component - odo - Binary to Image
 
-skip 1 and 2 if database and schema are setup already
+**skip 1 and 2 if database and schema are setup already**
 
-1. Create database instance from ["Option 1"]() in ["IV. Create Database Instance"]()
+1. Create database instance from ["Option 1"](../README.md#option-1-create-database-instance-with-oc-cli) in ["IV. Create Database Instance"](../README.md#iv-create-database-instance)
 
 2. Create the database schema by following ["V. Create Database Schema"](../README.md#v-create-database-schema)
 
