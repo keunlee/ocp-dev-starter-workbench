@@ -2,16 +2,13 @@
 
 ## I. Create Spring Boot Application Component - odo - Devfile
 
+1. Create a spring boot odo application
+
 ```bash
 odo create java-springboot todo-springboot-odo-devfile --context ./
-
-odo config set --env POSTGRES_HOST=database
-odo config set --env POSTGRES_DATABASE=todo
-odo config set --env POSTGRES_USER=postgres
-odo config set --env POSTGRES_PASSWORD=password
-
-odo push --show-log
 ```
+
+2. Create the database instance by following ["Option 2"](../README.md) of the database setup.
 
 clean up
 
