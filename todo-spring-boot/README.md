@@ -8,7 +8,7 @@
 odo create java-springboot todo-springboot-odo-devfile --context ./
 ```
 
-2. Create the database instance by following ["Option 2"](../README.md) of the database setup.
+2. Create the database instance by following ["Option 2"](../README.md#option-2-create-database-instance-with-odo) of the database setup.
 
 clean up
 
