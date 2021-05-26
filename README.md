@@ -75,8 +75,8 @@ EOF
 
 NOTE: This option will only work on odo projects that meet the following criteria: 
 
-- an odo `devfile.yaml` must present 
-- the build must NOT be an s2i (source to image) build.
+- an odo `devfile.yaml` must be present, which means you must create an odo project before running this
+- the build must NOT be an odo s2i (source to image) build.
 
 1. Store the yaml of the service in a file: 
 
@@ -87,7 +87,7 @@ odo service create postgresql-operator.v0.1.1/Database --dry-run > db.yaml
 2. Modify and add following values under metadata: section in the db.yaml file:
 
 ```yaml
-  name: sampledatabase
+  name: database
   annotations:
     service.binding/db_name: 'path={.spec.databaseName}'
     service.binding/db_password: 'path={.spec.databasePassword}'
