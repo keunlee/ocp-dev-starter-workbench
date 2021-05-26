@@ -73,7 +73,7 @@ EOF
 
 ### Option 2: Create Database Instance with `odo`
 
-NOTE: This option will only work on odo projects that meet the following criteria: 
+NOTE: As of odo v2.2.0, this option will only work on odo projects that meet the following criteria: 
 
 - an odo `devfile.yaml` must be present, which means you must create an odo project before running this
 - the build must NOT be an odo s2i (source to image) build.
